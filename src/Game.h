@@ -39,6 +39,13 @@ private:
     GameObject m_go;
     Player m_player;
     
+    std::vector<GameObject*> m_gameObjects;
+    
+    GameObject* m_player;
+    GameObject* m_enemy1;
+    GameObject* m_enemy2;
+    GameObject* m_enemy3;
+    
 };
 
 #endif // GAME_H
