@@ -14,6 +14,16 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     
     m_go.load(100, 100, 82, 104, "animate");
     m_player.load(300, 300, 82, 104, "animate", SDL_FLIP_HORIZONTAL);
+    
+    m_player = new Player();
+    m_enemy1 = new Enemy();
+    m_enemy2 = new Enemy();
+    m_enemy3 = new Enemy();
+    
+    m_gameObjects.push_back(m_player);
+    m_gameObjects.push_back(m_enemy1);
+    m_gameObjects.push_back(m_enemy2);
+    m_gameObjects.push_back(m_enemy3);
 
     
     if (fullscreen)
@@ -81,6 +91,11 @@ void Game::render()
      
      m_go.draw(m_pRenderer);
      m_player.draw(m_pRenderer);
+     
+     for(std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
+    {
+        m_gameObjects[i]->draw(m_pRenderer);
+    }
       
     SDL_RenderPresent(m_pRenderer);
 }
