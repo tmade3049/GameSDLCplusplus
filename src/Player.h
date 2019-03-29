@@ -9,7 +9,7 @@ public:
     Player();
     ~Player();
     
-    void load(int x, int y, int width, int height, std::string textureID);
+    void load(int x, int y, int width, int height, std::string textureID, SDL_RendererFlip flip = SDL_FLIP_NONE);
     void draw(SDL_Renderer* pRenderer);
     void update();
     void clean();

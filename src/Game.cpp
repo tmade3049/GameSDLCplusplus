@@ -13,7 +13,8 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     int flags = 0;
     
     m_go.load(100, 100, 82, 104, "animate");
-    m_player.load(300, 300, 82, 104, "animate");
+    m_player.load(300, 300, 82, 104, "animate", SDL_FLIP_HORIZONTAL);
+
     
     if (fullscreen)
     {
@@ -110,7 +111,7 @@ void Game::handleEvents()
 void Game::update()
 {
   //m_sourceRectangle.x = m_sourceRectangle.w * int(((SDL_GetTicks() / 100) % 6));
-  //m_currentFrame = int(((SDL_GetTicks() / 100) % 6));
+   // m_currentFrame = int(((SDL_GetTicks() / 100) % 6));
     m_go.update();
     m_player.update();
 }

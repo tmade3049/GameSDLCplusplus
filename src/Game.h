@@ -38,6 +38,7 @@ private:
     
     GameObject m_go;
     Player m_player;
+    
 };
 
 #endif // GAME_H
