@@ -1,20 +1,19 @@
-#ifndef PLAYER_H
-#define PLAYER_H
+#ifndef ENEMY_H
+#define ENEMY_H
 
 #include "SDLGameObject.h"
 #include "GameObject.h"
 
-class Player : public SDLGameObject
+class Enemy : public SDLGameObject
 {
 public:
-    Player(const LoaderParams* pParams);
-    ~Player();
+    Enemy(const LoaderParams* pParams);
+    ~Enemy();
     
     //void load(int x, int y, int width, int height, std::string textureID, SDL_RendererFlip flip = SDL_FLIP_NONE);
     virtual void draw(SDL_Renderer* pRenderer);
     virtual void update();
     virtual void clean();
-
 };
 
-#endif // PLAYER_H
+#endif // ENEMY_H

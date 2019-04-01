@@ -7,6 +7,9 @@
   </Plugins>
   <VirtualDirectory Name="assets"/>
   <VirtualDirectory Name="include">
+    <File Name="src/SDLGameObject.h"/>
+    <File Name="src/LoaderParams.h"/>
+    <File Name="src/Enemy.h"/>
     <File Name="src/Player.h"/>
     <File Name="src/GameObject.h"/>
     <File Name="src/TextureManager.h"/>
@@ -15,6 +18,9 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
+    <File Name="src/SDLGameObject.cpp"/>
+    <File Name="src/LoaderParams.cpp"/>
+    <File Name="src/Enemy.cpp"/>
     <File Name="src/Player.cpp"/>
     <File Name="src/GameObject.cpp"/>
     <File Name="src/TextureManager.cpp"/>

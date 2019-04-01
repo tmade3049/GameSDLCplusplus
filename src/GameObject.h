@@ -7,19 +7,23 @@
 #include "SDL_image.h"
 
 #include "TextureManager.h"
+#include "LoaderParams.h"
 
 class GameObject
 {
-public:
-    GameObject();
-    ~GameObject();
+public:   
     
-    void load(int x, int y, int width, int height, std::string textureID, SDL_RendererFlip flip = SDL_FLIP_NONE);
-    void draw(SDL_Renderer* pRenderer);
-    void update();
-    void clean();
+    //void load(int x, int y, int width, int height, std::string textureID, SDL_RendererFlip flip = SDL_FLIP_NONE);
+    virtual void draw() = 0;
+    virtual void update() = 0;
+    virtual void clean() = 0;
     
 protected:
+
+    GameObject(const LoaderParams* pParams);
+    virtual ~GameObject();
+    
+    /*
     std::string m_textureID;
     
     int m_currentRow;
@@ -32,6 +36,7 @@ protected:
     
     int m_x;
     int m_y;
+     * */
 };
 
 #endif // GAMEOBJECT_H

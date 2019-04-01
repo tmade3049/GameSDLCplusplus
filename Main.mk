@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=tmoraes
-Date                   :=29/03/2019
+Date                   :=01/04/2019
 CodeLitePath           :="C:/Program Files/CodeLite"
 LinkerName             :=C:/MinGW/bin/g++.exe
 SharedObjectLinkerName :=C:/MinGW/bin/g++.exe -shared -fPIC
@@ -62,7 +62,7 @@ AS       := C:/MinGW/bin/as.exe
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/src_Main.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_TextureManager.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Game.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Player.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_GameObject.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/src_LoaderParams.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Enemy.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Main.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_TextureManager.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Game.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_SDLGameObject.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Player.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_GameObject.cpp$(ObjectSuffix) 
 
 
 
@@ -93,6 +93,22 @@ PreBuild:
 ##
 ## Objects
 ##
+$(IntermediateDirectory)/src_LoaderParams.cpp$(ObjectSuffix): src/LoaderParams.cpp $(IntermediateDirectory)/src_LoaderParams.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/tmoraes/Documents/GameProjects/Main/src/LoaderParams.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_LoaderParams.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_LoaderParams.cpp$(DependSuffix): src/LoaderParams.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_LoaderParams.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_LoaderParams.cpp$(DependSuffix) -MM src/LoaderParams.cpp
+
+$(IntermediateDirectory)/src_LoaderParams.cpp$(PreprocessSuffix): src/LoaderParams.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_LoaderParams.cpp$(PreprocessSuffix) src/LoaderParams.cpp
+
+$(IntermediateDirectory)/src_Enemy.cpp$(ObjectSuffix): src/Enemy.cpp $(IntermediateDirectory)/src_Enemy.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/tmoraes/Documents/GameProjects/Main/src/Enemy.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_Enemy.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_Enemy.cpp$(DependSuffix): src/Enemy.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_Enemy.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_Enemy.cpp$(DependSuffix) -MM src/Enemy.cpp
+
+$(IntermediateDirectory)/src_Enemy.cpp$(PreprocessSuffix): src/Enemy.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_Enemy.cpp$(PreprocessSuffix) src/Enemy.cpp
+
 $(IntermediateDirectory)/src_Main.cpp$(ObjectSuffix): src/Main.cpp $(IntermediateDirectory)/src_Main.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/tmoraes/Documents/GameProjects/Main/src/Main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_Main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/src_Main.cpp$(DependSuffix): src/Main.cpp
@@ -116,6 +132,14 @@ $(IntermediateDirectory)/src_Game.cpp$(DependSuffix): src/Game.cpp
 
 $(IntermediateDirectory)/src_Game.cpp$(PreprocessSuffix): src/Game.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_Game.cpp$(PreprocessSuffix) src/Game.cpp
+
+$(IntermediateDirectory)/src_SDLGameObject.cpp$(ObjectSuffix): src/SDLGameObject.cpp $(IntermediateDirectory)/src_SDLGameObject.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/tmoraes/Documents/GameProjects/Main/src/SDLGameObject.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_SDLGameObject.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_SDLGameObject.cpp$(DependSuffix): src/SDLGameObject.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_SDLGameObject.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_SDLGameObject.cpp$(DependSuffix) -MM src/SDLGameObject.cpp
+
+$(IntermediateDirectory)/src_SDLGameObject.cpp$(PreprocessSuffix): src/SDLGameObject.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_SDLGameObject.cpp$(PreprocessSuffix) src/SDLGameObject.cpp
 
 $(IntermediateDirectory)/src_Player.cpp$(ObjectSuffix): src/Player.cpp $(IntermediateDirectory)/src_Player.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/tmoraes/Documents/GameProjects/Main/src/Player.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_Player.cpp$(ObjectSuffix) $(IncludePath)
