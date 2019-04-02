@@ -4,12 +4,8 @@
 #include<iostream>
 #include<vector>
 
-#include "SDL.h"
-#include "SDL_image.h"
-#include "TextureManager.h"
-#include "Player.h"
-#include "Enemy.h"
 #include "SDLGameObject.h"
+#include "TextureManager.h"
 
 class Game
 {
@@ -42,7 +38,7 @@ private:
     //TextureManager m_textureManager;
     
     typedef TextureManager TheTextureManager;
-    
+        
     bool m_bRunning;
     
     std::vector<SDLGameObject*> m_gameObjects;

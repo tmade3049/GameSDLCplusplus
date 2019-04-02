@@ -3,10 +3,6 @@
 
 #include<iostream>
 
-#include "SDL.h"
-#include "SDL_image.h"
-
-#include "TextureManager.h"
 #include "LoaderParams.h"
 
 class GameObject

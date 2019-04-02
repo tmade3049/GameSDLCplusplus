@@ -1,5 +1,7 @@
 #include "Game.h"
 
+#include "Player.h"
+#include "Enemy.h"
 Game* Game::s_pInstance = 0;
 
 Game::Game()
@@ -102,7 +104,7 @@ void Game::render()
      //m_go.draw(m_pRenderer);
      //m_go.draw();
      
-    for(std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
+    for(std::vector<SDLGameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
     {
         //m_gameObjects[i]->draw(m_pRenderer);
         m_gameObjects[i]->draw();

@@ -2,7 +2,7 @@
 #define ENEMY_H
 
 #include "SDLGameObject.h"
-#include "GameObject.h"
+#include "LoaderParams.h"
 
 class Enemy : public SDLGameObject
 {
