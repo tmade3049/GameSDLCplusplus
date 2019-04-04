@@ -2,6 +2,8 @@
 
 #include "Player.h"
 #include "Enemy.h"
+#include "InputHandler.h"
+
 Game* Game::s_pInstance = 0;
 
 Game::Game()
@@ -34,6 +36,8 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     m_gameObjects.push_back(new Player(new LoaderParams(100, 100, 80, 104, "animate")));
     m_gameObjects.push_back(new Enemy(new LoaderParams(500, 200, 80, 104, "animate_enemy", SDL_FLIP_HORIZONTAL)));
     m_gameObjects.push_back(new Enemy(new LoaderParams(500, 300, 80, 104, "animate_enemy", SDL_FLIP_HORIZONTAL)));
+    
+    InputHandler::Instance()->initialiseJoysticks();
 
     
     if (fullscreen)
@@ -70,7 +74,8 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
                 
                 //m_textureManager.load("C:/Users/tmoraes/Documents/GameProjects/Main/assets/img/run.png", "animate", m_pRenderer);
                 if(!TheTextureManager::Instance()->load("C:/Users/tmoraes/Documents/GameProjects/Main/assets/img/running.png", "animate", m_pRenderer)
-                || !TheTextureManager::Instance()->load("C:/Users/tmoraes/Documents/GameProjects/Main/assets/img/running_enemy.png", "animate_enemy", m_pRenderer) )
+                //|| !TheTextureManager::Instance()->load("C:/Users/tmoraes/Documents/GameProjects/Main/assets/img/running_enemy.png", "animate_enemy", m_pRenderer)
+                  )
                     return false;
             }
             else
@@ -117,12 +122,13 @@ void Game::clean()
 {
     SDL_DestroyWindow(m_pWindow);
     SDL_DestroyRenderer(m_pRenderer);
+    InputHandler::Instance()->clean();
     SDL_Quit();
 }
 
 void Game::handleEvents()
 {
-    SDL_Event event;
+   /* SDL_Event event;
     
     if(SDL_PollEvent(&event))
     {
@@ -134,7 +140,9 @@ void Game::handleEvents()
             default:
                 break;
         }
-    }
+    }*/
+    
+    InputHandler::Instance()->update();
 }
 void Game::update()
 {
@@ -147,6 +155,12 @@ void Game::update()
         m_gameObjects[i]->update();
     }
 }
+
+void Game::quit()
+{
+    m_bRunning = false;
+}
+
 Game* Game::Instance()
 {
     if(s_pInstance == 0)
@@ -155,3 +169,6 @@ Game* Game::Instance()
         return s_pInstance;
     }
 }
+
+
+

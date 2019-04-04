@@ -14,6 +14,8 @@ public:
     virtual void draw(SDL_Renderer* pRenderer);
     virtual void update();
     virtual void clean();
+    
+    void handleInput();
 
 };
 

@@ -17,6 +17,7 @@ public:
     void handleEvents();
     void clean();
     bool running(){return m_bRunning;}
+    void quit();
     
     SDL_Renderer* getRenderer() const { return m_pRenderer; }
     
@@ -51,5 +52,10 @@ private:
     SDLGameObject* m_enemy3;
     
 };
-
+enum game_states
+{
+    MENU = 0,
+    PLAY = 1,
+    GAMEOVER = 2
+};
 #endif // GAME_H

@@ -43,7 +43,11 @@ Debug/src_InputHandler.cpp.o: src/InputHandler.cpp src/InputHandler.h \
  C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32/include/SDL2/SDL_shape.h \
  C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32/include/SDL2/SDL_system.h \
  C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32/include/SDL2/SDL_timer.h \
- C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32/include/SDL2/SDL_version.h
+ C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32/include/SDL2/SDL_version.h \
+ src/Vector2D.h src/Game.h src/SDLGameObject.h src/GameObject.h \
+ src/LoaderParams.h src/TextureManager.h \
+ C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32/include/SDL2/SDL_image.h \
+ C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32/include/SDL2/SDL.h
 
 src/InputHandler.h:
 
@@ -136,3 +140,19 @@ C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32
 C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32/include/SDL2/SDL_timer.h:
 
 C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32/include/SDL2/SDL_version.h:
+
+src/Vector2D.h:
+
+src/Game.h:
+
+src/SDLGameObject.h:
+
+src/GameObject.h:
+
+src/LoaderParams.h:
+
+src/TextureManager.h:
+
+C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32/include/SDL2/SDL_image.h:
+
+C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32/include/SDL2/SDL.h:

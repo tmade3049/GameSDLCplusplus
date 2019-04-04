@@ -7,7 +7,6 @@
   </Plugins>
   <VirtualDirectory Name="assets"/>
   <VirtualDirectory Name="include">
-    <File Name="src/Vector2D.cpp"/>
     <File Name="src/Vector2D.h"/>
     <File Name="src/InputHandler.h"/>
     <File Name="src/SDLGameObject.h"/>
@@ -21,6 +20,7 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
+    <File Name="src/Vector2D.cpp"/>
     <File Name="src/InputHandler.cpp"/>
     <File Name="src/SDLGameObject.cpp"/>
     <File Name="src/LoaderParams.cpp"/>
