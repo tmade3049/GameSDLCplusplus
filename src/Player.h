@@ -3,20 +3,26 @@
 
 #include "SDLGameObject.h"
 #include "LoaderParams.h"
+#include "BaseCreator.h"
 
 class Player : public SDLGameObject
 {
 public:
-    Player(const LoaderParams* pParams);
+    Player();
     ~Player();
     
-    //void load(int x, int y, int width, int height, std::string textureID, SDL_RendererFlip flip = SDL_FLIP_NONE);
     virtual void draw(SDL_Renderer* pRenderer);
     virtual void update();
     virtual void clean();
-    
+    virtual void load(const LoaderParams* pParams);
     void handleInput();
 
 };
-
+class PlayerCreator : public BaseCreator
+{
+    GameObject* createGameObject() const
+    {
+        return new Player();
+    }
+};
 #endif // PLAYER_H

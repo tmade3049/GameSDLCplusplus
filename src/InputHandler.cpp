@@ -212,7 +212,6 @@ void InputHandler::onMouseButtonUp(SDL_Event& event)
     } 
 }
 
-
 // handle joysticks events
 void InputHandler::onJoystickAxisMove(SDL_Event& event)
 {
@@ -294,4 +293,10 @@ void InputHandler::onJoystickButtonUp(SDL_Event& event)
     m_buttonStates[wichOne][event.jbutton.button] = false;
 }
 
-
+void InputHandler::reset()
+{
+    for(int i = 0; i < 3; i++)
+    {
+        m_mouseButtonStates.push_back(false);
+    }
+}

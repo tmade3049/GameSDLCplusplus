@@ -6,6 +6,7 @@
 
 #include "SDLGameObject.h"
 #include "TextureManager.h"
+#include "GameStateMachine.h"
 
 class Game
 {
@@ -19,10 +20,26 @@ public:
     bool running(){return m_bRunning;}
     void quit();
     
-    SDL_Renderer* getRenderer() const { return m_pRenderer; }
+    SDL_Renderer* getRenderer() const 
+    { 
+        return m_pRenderer; 
+    }
+    GameStateMachine* getStateMachine()
+    { 
+        return m_pGameStateMachine; 
+    }
+   
+    int getGameWidth() const
+    {
+        return m_gameWidth;
+    }
     
-private:
+    int getGameHeight() const
+    {
+        return m_gameHeight;
+    }
 
+private:
     Game();
     ~Game();
     
@@ -30,32 +47,29 @@ private:
         
     SDL_Window* m_pWindow;
     SDL_Renderer* m_pRenderer;
-    
-    //SDL_Texture* m_pTexture;
-    //SDL_Rect m_sourceRectangle;
-    //SDL_Rect m_destinationRectangle;
-    
+   
     int m_currentFrame;
-    //TextureManager m_textureManager;
-    
+
     typedef TextureManager TheTextureManager;
         
     bool m_bRunning;
     
     std::vector<SDLGameObject*> m_gameObjects;
     
-    //GameObject m_go;
-    
     SDLGameObject* m_player;
     SDLGameObject* m_enemy1;
     SDLGameObject* m_enemy2;
     SDLGameObject* m_enemy3;
     
+    int mm_currentGameState = MENU;
+    
+    int  m_gameWidth, m_gameHeight;
+    
+    GameStateMachine* m_pGameStateMachine;
+    
 };
-enum game_states
-{
-    MENU = 0,
-    PLAY = 1,
-    GAMEOVER = 2
-};
+
+typedef Game TheGame;
+
 #endif // GAME_H
+

@@ -45,7 +45,7 @@ Debug/src_Enemy.cpp.o: src/Enemy.cpp src/Enemy.h src/SDLGameObject.h \
  C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32/include/SDL2/SDL_system.h \
  C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32/include/SDL2/SDL_timer.h \
  C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32/include/SDL2/SDL_version.h \
- src/Vector2D.h
+ src/Vector2D.h src/BaseCreator.h
 
 src/Enemy.h:
 
@@ -146,3 +146,5 @@ C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32
 C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32/include/SDL2/SDL_version.h:
 
 src/Vector2D.h:
+
+src/BaseCreator.h:

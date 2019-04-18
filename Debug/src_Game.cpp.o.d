@@ -48,7 +48,10 @@ Debug/src_Game.cpp.o: src/Game.cpp src/Game.h src/SDLGameObject.h \
  src/Vector2D.h src/TextureManager.h \
  C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32/include/SDL2/SDL_image.h \
  C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32/include/SDL2/SDL.h \
- src/Player.h src/Enemy.h src/InputHandler.h
+ src/GameStateMachine.h src/GameState.h src/Player.h src/BaseCreator.h \
+ src/Enemy.h src/InputHandler.h src/MainMenuState.h src/MenuState.h \
+ src/PlayState.h src/GameObjectFactory.h src/MenuButton.h \
+ src/AnimatedGraphic.h
 
 src/Game.h:
 
@@ -156,8 +159,26 @@ C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32
 
 C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32/include/SDL2/SDL.h:
 
+src/GameStateMachine.h:
+
+src/GameState.h:
+
 src/Player.h:
+
+src/BaseCreator.h:
 
 src/Enemy.h:
 
 src/InputHandler.h:
+
+src/MainMenuState.h:
+
+src/MenuState.h:
+
+src/PlayState.h:
+
+src/GameObjectFactory.h:
+
+src/MenuButton.h:
+
+src/AnimatedGraphic.h:

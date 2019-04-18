@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="4" nextobjectid="2">
+ <properties>
+  <property name="ObjQlq" value="img/alienBeige.bmp"/>
+ </properties>
+ <tileset firstgid="1" name="tile_32" tilewidth="32" tileheight="32" spacing="1" tilecount="400" columns="20">
+  <image source="tileset/tile_32.png" trans="5e81a2" width="661" height="661"/>
+ </tileset>
+ <layer id="3" name="Camada de Tiles 2" width="20" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFIw0wIeE0ND5MbBSMgsEIAEaWANs=
+  </data>
+ </layer>
+ <layer id="1" name="Camada de Tiles 1" width="20" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFtACLgHgxEWLEgm1AvJ0IMWJAKhCfAuLTQFwNFatEEqsi042jYBTQGgAAOqoKYg==
+  </data>
+ </layer>
+ <objectgroup id="2" name="Camada de Objetos 1">
+  <object id="1" name="ObjQlq" type="player" x="304" y="146" width="1" height="1">
+   <properties>
+    <property name="numFrames" type="int" value="8"/>
+    <property name="textureHeight" type="int" value="55"/>
+    <property name="textureID" value="player"/>
+    <property name="textureWidth" type="int" value="120"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

@@ -3,17 +3,24 @@
 
 #include "SDLGameObject.h"
 #include "LoaderParams.h"
+#include "BaseCreator.h"
 
 class Enemy : public SDLGameObject
 {
 public:
-    Enemy(const LoaderParams* pParams);
+    Enemy();
     ~Enemy();
     
-    //void load(int x, int y, int width, int height, std::string textureID, SDL_RendererFlip flip = SDL_FLIP_NONE);
     virtual void draw(SDL_Renderer* pRenderer);
     virtual void update();
     virtual void clean();
+    virtual void load(const LoaderParams* pParams);
 };
-
+class EnemyCreator : public BaseCreator
+{
+    GameObject* createGameObject() const
+    {
+        return new Enemy();
+    }
+};
 #endif // ENEMY_H

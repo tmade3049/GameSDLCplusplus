@@ -1,0 +1,13 @@
+C:/Users/tmoraes/Documents/GameProjects/Main/lib/CMakeFiles/minigzip64.dir
+C:/Users/tmoraes/Documents/GameProjects/Main/lib/CMakeFiles/zlib.dir
+C:/Users/tmoraes/Documents/GameProjects/Main/lib/CMakeFiles/zlibstatic.dir
+C:/Users/tmoraes/Documents/GameProjects/Main/lib/CMakeFiles/example.dir
+C:/Users/tmoraes/Documents/GameProjects/Main/lib/CMakeFiles/minigzip.dir
+C:/Users/tmoraes/Documents/GameProjects/Main/lib/CMakeFiles/example64.dir
+C:/Users/tmoraes/Documents/GameProjects/Main/lib/CMakeFiles/rebuild_cache.dir
+C:/Users/tmoraes/Documents/GameProjects/Main/lib/CMakeFiles/test.dir
+C:/Users/tmoraes/Documents/GameProjects/Main/lib/CMakeFiles/edit_cache.dir
+C:/Users/tmoraes/Documents/GameProjects/Main/lib/CMakeFiles/list_install_components.dir
+C:/Users/tmoraes/Documents/GameProjects/Main/lib/CMakeFiles/install.dir
+C:/Users/tmoraes/Documents/GameProjects/Main/lib/CMakeFiles/install/local.dir
+C:/Users/tmoraes/Documents/GameProjects/Main/lib/CMakeFiles/install/strip.dir

@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<STATES>
+	<MENU>
+		<TEXTURES>
+			<texture filename="../assets/img/play_button.png" ID="playbutton"/>
+			<texture filename="../assets/img/exit_button.png" ID="exitbutton"/>
+		</TEXTURES>
+		<OBJECTS>
+			<object type="MenuButton" x="200" y="100" width="167" height="65" textureID="playbutton" numFrames="0" callbackID="1"/>
+			<object type="MenuButton" x="200" y="180" width="167" height="65" textureID="exitbutton" numFrames="0" callbackID="2"/>
+		</OBJECTS>
+	</MENU>
+	<PAUSE>
+		<TEXTURES>
+			<texture filename="../assets/img/main.png" ID="mainbutton"/>
+			<texture filename="../assets/img/resume.png" ID="resumebutton"/>
+		</TEXTURES>
+		<OBJECTS>
+			<object type="MenuButton" x="200" y="100" width="150" height="65" textureID="mainbutton" numFrames="0" callbackID="1"/>
+			<object type="MenuButton" x="200" y="180" width="150" height="65" textureID="resumebutton" numFrames="0" callbackID="2"/>
+		</OBJECTS>
+	</PAUSE>
+	<GAMEOVER>
+		<TEXTURES>
+			<texture filename="../assets/img/main.png" ID="mainbutton"/>
+			<texture filename="../assets/img/resume.png" ID="restartbutton"/>
+			<texture filename="../assets/img/gameover.png" ID="gameovertext"/>
+		</TEXTURES>
+		<OBJECTS>
+			<object type="MenuButton" x="200" y="180" width="150" height="65" textureID="mainbutton" numFrames="0" callbackID="1"/>
+			<object type="MenuButton" x="200" y="250" width="150" height="65" textureID="restartbutton" numFrames="0" callbackID="2"/>
+			<object type="AnimatedGraphic" x="200" y="20" width="228" height="125" textureID="gameovertext" numFrames="2" animSpeed="10"/>
+		</OBJECTS>
+	</GAMEOVER>
+	<PLAY>
+	<TEXTURES>
+			<texture filename="../assets/img/running.png" ID="animate"/>
+			<texture filename="../assets/img/running_enemy.png" ID="animate_enemy"/>
+		</TEXTURES>
+		<OBJECTS>
+			<object type="Player" x="100" y="100" width="80" height="104" textureID="animate" numFrames="8"/>
+			<object type="Enemy" x="500" y="200" width="80" height="104" textureID="animate_enemy" flip="1" numFrames="8"/>
+		</OBJECTS>
+	</PLAY>
+</STATES>

@@ -47,7 +47,9 @@ Debug/src_Main.cpp.o: src/Main.cpp src/Game.h src/SDLGameObject.h \
  C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32/include/SDL2/SDL_version.h \
  src/Vector2D.h src/TextureManager.h \
  C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32/include/SDL2/SDL_image.h \
- C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32/include/SDL2/SDL.h
+ C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32/include/SDL2/SDL.h \
+ src/GameStateMachine.h src/GameState.h src/zlib.h src/zconf.h \
+ src/base64.h
 
 src/Game.h:
 
@@ -154,3 +156,13 @@ src/TextureManager.h:
 C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32/include/SDL2/SDL_image.h:
 
 C:/Users/tmoraes/Documents/tai/Cpp_game_devs_SDL_lib/SDL2-2.0.9/i686-w64-mingw32/include/SDL2/SDL.h:
+
+src/GameStateMachine.h:
+
+src/GameState.h:
+
+src/zlib.h:
+
+src/zconf.h:
+
+src/base64.h:

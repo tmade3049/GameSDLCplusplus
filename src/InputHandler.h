@@ -15,6 +15,8 @@ public:
     void update();
     void clean();
     
+    void reset();
+    
     int xvalue(int joy, int stick);
     int yvalue(int joy, int stick);
     
@@ -72,5 +74,7 @@ enum mouse_buttons
     MIDDLE = 1,
     RIGHT = 2
 };
-//typedef InputHandler TheInputHandler;
+
+typedef InputHandler TheInputHandler;
+
 #endif // INPUTHANDLER_H

@@ -3,6 +3,11 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "InputHandler.h"
+#include "MainMenuState.h"
+#include "PlayState.h"
+#include "GameObjectFactory.h"
+#include "MenuButton.h"
+#include "AnimatedGraphic.h"
 
 Game* Game::s_pInstance = 0;
 
@@ -16,34 +21,22 @@ Game::~Game()
 
 bool Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen)
 {
-    int flags = 0;
+    int flags = 0; 
     
-    //m_go.load(100, 100, 82, 104, "animate");
-    //m_player->load(300, 300, 82, 104, "animate", SDL_FLIP_HORIZONTAL);
+    m_gameHeight = height;
+    m_gameWidth = width;
     
-    /*
-    m_player = new Player();
-    m_enemy1 = new Enemy();
-    m_enemy2 = new Enemy();
-    m_enemy3 = new Enemy();
-    
-    m_gameObjects.push_back(m_player);
-    m_gameObjects.push_back(m_enemy1);
-    m_gameObjects.push_back(m_enemy2);
-    m_gameObjects.push_back(m_enemy3);
-     */
-     
-    m_gameObjects.push_back(new Player(new LoaderParams(100, 100, 80, 104, "animate")));
-    m_gameObjects.push_back(new Enemy(new LoaderParams(500, 200, 80, 104, "animate_enemy", SDL_FLIP_HORIZONTAL)));
-    m_gameObjects.push_back(new Enemy(new LoaderParams(500, 300, 80, 104, "animate_enemy", SDL_FLIP_HORIZONTAL)));
-    
+    TheGameObjectFactory::Instance()->registerType("MenuButton", new MenuButtonCreator());
+    TheGameObjectFactory::Instance()->registerType("Player", new PlayerCreator());
+    TheGameObjectFactory::Instance()->registerType("Enemy", new EnemyCreator());
+    TheGameObjectFactory::Instance()->registerType("AnimatedGraphic", new AnimatedGraphicCreator());
     InputHandler::Instance()->initialiseJoysticks();
-
     
     if (fullscreen)
     {
         flags = SDL_WINDOW_OPENGL;
     }
+    
     if(SDL_Init(SDL_INIT_EVERYTHING) == 0)
     {
         m_pWindow = SDL_CreateWindow(title, xpos, ypos, width, height, flags);
@@ -56,27 +49,9 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
             {
                 SDL_SetRenderDrawColor(m_pRenderer, 255, 255, 255, 255);
                 
-                //SDL_Surface* pTempSurface = SDL_LoadBMP("C:/Users/tmoraes/Documents/GameProjects/Main/assets/img/alienBeige.bmp");
-                //SDL_Surface* pTempSurface = SDL_LoadBMP("C:/Users/tmoraes/Documents/GameProjects/Main/assets/img/run.bmp");
-                // SDL_Surface* pTempSurface = IMG_Load("C:/Users/tmoraes/Documents/GameProjects/Main/assets/img/run.png");
-                
-                 //m_pTexture = SDL_CreateTextureFromSurface(m_pRenderer, pTempSurface);
-                 //SDL_FreeSurface(pTempSurface);
-                                        
-                //SDL_QueryTexture(m_pTexture, NULL, NULL, &m_sourceRectangle.w, &m_sourceRectangle.h);
-               // m_sourceRectangle.w /= 8;
-                //m_sourceRectangle.h = 105;
-                                
-               // m_destinationRectangle.x = m_sourceRectangle.x = 0;
-               // m_destinationRectangle.y = m_sourceRectangle.y = 0;
-               // m_destinationRectangle.w = m_sourceRectangle.w;
-               // m_destinationRectangle.h = m_sourceRectangle.h;                
-                
-                //m_textureManager.load("C:/Users/tmoraes/Documents/GameProjects/Main/assets/img/run.png", "animate", m_pRenderer);
-                if(!TheTextureManager::Instance()->load("C:/Users/tmoraes/Documents/GameProjects/Main/assets/img/running.png", "animate", m_pRenderer)
-                //|| !TheTextureManager::Instance()->load("C:/Users/tmoraes/Documents/GameProjects/Main/assets/img/running_enemy.png", "animate_enemy", m_pRenderer)
-                  )
-                    return false;
+                    m_pGameStateMachine = new GameStateMachine();
+                    m_pGameStateMachine->changeState(new MainMenuState());
+//                    m_pGameStateMachine->changeState(new PlayState());
             }
             else
             {
@@ -98,23 +73,9 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 void Game::render()
 {
     SDL_RenderClear(m_pRenderer);
+
+    m_pGameStateMachine->render();
     
-    //SDL_RenderCopy(m_pRenderer, m_pTexture,(const SDL_Rect*)&m_sourceRectangle, (const SDL_Rect*)&m_destinationRectangle);
-    //SDL_RenderCopyEx(m_pRenderer, m_pTexture, &m_sourceRectangle, &m_destinationRectangle, 0, 0, SDL_FLIP_HORIZONTAL);
-    //m_textureManager.draw("animate", 0, 0, 82, 104, m_pRenderer);
-    //TheTextureManager::Instance()->draw("animate", 0, 0, 82, 104, m_pRenderer);
-    //m_textureManager.drawFrame("animate", 100, 100, 82, 104, 1, m_currentFrame, m_pRenderer);
-    //TheTextureManager::Instance()->drawFrame("animate", 100, 100, 82, 104, 1, m_currentFrame, m_pRenderer);
-     
-     //m_go.draw(m_pRenderer);
-     //m_go.draw();
-     
-    for(std::vector<SDLGameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
-    {
-        //m_gameObjects[i]->draw(m_pRenderer);
-        m_gameObjects[i]->draw();
-    }
-      
     SDL_RenderPresent(m_pRenderer);
 }
 
@@ -128,32 +89,15 @@ void Game::clean()
 
 void Game::handleEvents()
 {
-   /* SDL_Event event;
-    
-    if(SDL_PollEvent(&event))
+   InputHandler::Instance()->update();
+   if(InputHandler::Instance()->isKeyDown(SDL_SCANCODE_RETURN))
     {
-        switch(event.type)
-        {
-            case SDL_QUIT:
-                m_bRunning = false;
-                break;
-            default:
-                break;
-        }
-    }*/
-    
-    InputHandler::Instance()->update();
+        m_pGameStateMachine->changeState(new PlayState());
+    }
 }
 void Game::update()
 {
-   //m_sourceRectangle.x = m_sourceRectangle.w * int(((SDL_GetTicks() / 100) % 6));
-   //m_currentFrame = int(((SDL_GetTicks() / 100) % 6));
-   //m_go.update();
-    
-    for(std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
-    {
-        m_gameObjects[i]->update();
-    }
+    m_pGameStateMachine->update();    
 }
 
 void Game::quit()

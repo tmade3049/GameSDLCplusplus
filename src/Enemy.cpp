@@ -1,19 +1,18 @@
 #include "Enemy.h"
 
-Enemy::Enemy(const LoaderParams* pParams) : SDLGameObject(pParams) 
+Enemy::Enemy() : SDLGameObject()
 {
+    
+}
+
+void Enemy::load(const LoaderParams* pParams)
+{
+    SDLGameObject::load(pParams);
 }
 
 Enemy::~Enemy()
 {
 }
-
-/*
-void Enemy::load(int x, int y, int width, int height, std::string textureID, SDL_RendererFlip flip)
-{
-    //GameObject::load(x, y, width, height, textureID, flip);
-}
- * */
 
 void Enemy::draw(SDL_Renderer* pRenderer)
 {

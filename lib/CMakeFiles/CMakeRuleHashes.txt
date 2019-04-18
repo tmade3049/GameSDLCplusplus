@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+12569c48c238f5f9ea06a545a3a99a50 zlib1rc.obj
